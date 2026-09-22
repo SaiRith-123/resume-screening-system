@@ -26,6 +26,8 @@ backend/storage/
 storage/
 streamlit_app/data/
 *.db
+.cache/
+backend/.cache/
 firebase-admin*.json
 backend/artifacts/
 sample_data/kaggle_resume_dataset/Resumes/
