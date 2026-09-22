@@ -1,0 +1,379 @@
+{
+  "generated_at": "2026-09-22T10:41:32.468311+00:00",
+  "git_commit": null,
+  "git_commit_status": "no_commit_exists",
+  "dataset": {
+    "resumes": 10,
+    "jobs": 5,
+    "comparisons": 50
+  },
+  "models": {
+    "degraded": {
+      "backend": "hash",
+      "dimension": 384
+    },
+    "real": {
+      "backend": "transformers",
+      "name": "sentence-transformers/all-MiniLM-L6-v2",
+      "dimension": 384,
+      "sentence_transformers_version": "3.3.1"
+    }
+  },
+  "aggregate": {
+    "mean_hash_semantic_score": 4.05,
+    "mean_real_semantic_score": 4.78,
+    "mean_delta": 0.73
+  },
+  "comparisons": [
+    {
+      "resume": "01_aarav_sharma_excellent_ml.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 29.0,
+      "real_semantic_score": 25.6,
+      "delta": -3.4
+    },
+    {
+      "resume": "01_aarav_sharma_excellent_ml.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 7.9,
+      "real_semantic_score": 9.1,
+      "delta": 1.2
+    },
+    {
+      "resume": "01_aarav_sharma_excellent_ml.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.7,
+      "real_semantic_score": 0.0,
+      "delta": -0.7
+    },
+    {
+      "resume": "01_aarav_sharma_excellent_ml.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 8.9,
+      "real_semantic_score": 7.1,
+      "delta": -1.8
+    },
+    {
+      "resume": "01_aarav_sharma_excellent_ml.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 5.4,
+      "real_semantic_score": 0.0,
+      "delta": -5.4
+    },
+    {
+      "resume": "02_priya_nair_excellent_backend.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 4.1,
+      "real_semantic_score": 0.0,
+      "delta": -4.1
+    },
+    {
+      "resume": "02_priya_nair_excellent_backend.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 18.8,
+      "real_semantic_score": 32.3,
+      "delta": 13.5
+    },
+    {
+      "resume": "02_priya_nair_excellent_backend.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 4.4,
+      "real_semantic_score": 0.0,
+      "delta": -4.4
+    },
+    {
+      "resume": "02_priya_nair_excellent_backend.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "02_priya_nair_excellent_backend.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 3.2,
+      "real_semantic_score": 2.2,
+      "delta": -1.0
+    },
+    {
+      "resume": "03_rohan_mehta_excellent_frontend.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "03_rohan_mehta_excellent_frontend.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 0.1,
+      "real_semantic_score": 0.0,
+      "delta": -0.1
+    },
+    {
+      "resume": "03_rohan_mehta_excellent_frontend.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 20.8,
+      "real_semantic_score": 35.2,
+      "delta": 14.4
+    },
+    {
+      "resume": "03_rohan_mehta_excellent_frontend.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "03_rohan_mehta_excellent_frontend.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "04_sneha_iyer_good_data_scientist.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 10.7,
+      "real_semantic_score": 7.6,
+      "delta": -3.1
+    },
+    {
+      "resume": "04_sneha_iyer_good_data_scientist.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 2.4,
+      "real_semantic_score": 0.0,
+      "delta": -2.4
+    },
+    {
+      "resume": "04_sneha_iyer_good_data_scientist.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 1.2,
+      "real_semantic_score": 0.0,
+      "delta": -1.2
+    },
+    {
+      "resume": "04_sneha_iyer_good_data_scientist.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 20.4,
+      "real_semantic_score": 22.6,
+      "delta": 2.2
+    },
+    {
+      "resume": "04_sneha_iyer_good_data_scientist.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 3.6,
+      "real_semantic_score": 0.0,
+      "delta": -3.6
+    },
+    {
+      "resume": "05_vikram_desai_excellent_devops.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 3.3,
+      "real_semantic_score": 0.0,
+      "delta": -3.3
+    },
+    {
+      "resume": "05_vikram_desai_excellent_devops.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 0.6,
+      "real_semantic_score": 6.2,
+      "delta": 5.6
+    },
+    {
+      "resume": "05_vikram_desai_excellent_devops.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "05_vikram_desai_excellent_devops.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "05_vikram_desai_excellent_devops.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 27.0,
+      "real_semantic_score": 44.3,
+      "delta": 17.3
+    },
+    {
+      "resume": "06_kavya_reddy_missing_mandatory_ml.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 10.3,
+      "delta": 10.3
+    },
+    {
+      "resume": "06_kavya_reddy_missing_mandatory_ml.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 3.7,
+      "real_semantic_score": 14.9,
+      "delta": 11.2
+    },
+    {
+      "resume": "06_kavya_reddy_missing_mandatory_ml.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 7.5,
+      "delta": 7.5
+    },
+    {
+      "resume": "06_kavya_reddy_missing_mandatory_ml.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 3.7,
+      "delta": 3.7
+    },
+    {
+      "resume": "06_kavya_reddy_missing_mandatory_ml.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "07_ramesh_gupta_high_experience_poor_fit.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "07_ramesh_gupta_high_experience_poor_fit.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 3.5,
+      "real_semantic_score": 0.0,
+      "delta": -3.5
+    },
+    {
+      "resume": "07_ramesh_gupta_high_experience_poor_fit.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "07_ramesh_gupta_high_experience_poor_fit.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 2.7,
+      "real_semantic_score": 0.0,
+      "delta": -2.7
+    },
+    {
+      "resume": "07_ramesh_gupta_high_experience_poor_fit.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 2.0,
+      "real_semantic_score": 0.0,
+      "delta": -2.0
+    },
+    {
+      "resume": "08_ananya_bose_strong_skills_low_experience.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 5.9,
+      "real_semantic_score": 10.2,
+      "delta": 4.3
+    },
+    {
+      "resume": "08_ananya_bose_strong_skills_low_experience.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "08_ananya_bose_strong_skills_low_experience.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "08_ananya_bose_strong_skills_low_experience.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "08_ananya_bose_strong_skills_low_experience.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "09_meera_krishnan_academic_phd.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 7.7,
+      "real_semantic_score": 0.0,
+      "delta": -7.7
+    },
+    {
+      "resume": "09_meera_krishnan_academic_phd.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "09_meera_krishnan_academic_phd.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "09_meera_krishnan_academic_phd.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "09_meera_krishnan_academic_phd.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "10_ishaan_kapoor_poor_match.md",
+      "job": "01_machine_learning_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "10_ishaan_kapoor_poor_match.md",
+      "job": "02_backend_engineer.md",
+      "hash_semantic_score": 0.0,
+      "real_semantic_score": 0.0,
+      "delta": 0.0
+    },
+    {
+      "resume": "10_ishaan_kapoor_poor_match.md",
+      "job": "03_frontend_engineer.md",
+      "hash_semantic_score": 0.3,
+      "real_semantic_score": 0.0,
+      "delta": -0.3
+    },
+    {
+      "resume": "10_ishaan_kapoor_poor_match.md",
+      "job": "04_data_scientist.md",
+      "hash_semantic_score": 1.7,
+      "real_semantic_score": 0.1,
+      "delta": -1.6
+    },
+    {
+      "resume": "10_ishaan_kapoor_poor_match.md",
+      "job": "05_devops_engineer.md",
+      "hash_semantic_score": 2.5,
+      "real_semantic_score": 0.0,
+      "delta": -2.5
+    }
+  ]
+}

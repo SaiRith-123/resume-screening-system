@@ -1,0 +1,16 @@
+streamlit>=1.49
+pydantic>=2.9
+pydantic-settings>=2.6
+email-validator>=2.1
+SQLAlchemy>=2.0
+python-docx>=1.1
+pdfplumber>=0.11
+pypdf>=5.0
+rapidfuzz>=3.10
+numpy>=1.26
+python-dateutil>=2.9
+pandas>=2.0
+
+# Optional - true semantic embeddings (heavy: pulls in torch).
+# If commented out, a deterministic hashing embedder is used instead.
+# sentence-transformers>=3.0

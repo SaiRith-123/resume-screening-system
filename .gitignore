@@ -1,0 +1,38 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Storage / uploads
+backend/storage/
+storage/
+streamlit_app/data/
+*.db
+firebase-admin*.json
+backend/artifacts/
+sample_data/kaggle_resume_dataset/Resumes/
+sample_data/kaggle_resume_dataset/processed/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

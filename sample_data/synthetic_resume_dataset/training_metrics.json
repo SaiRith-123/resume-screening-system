@@ -1,0 +1,103 @@
+{
+  "training_records": 120,
+  "test_records": 30,
+  "eligible_labels": [
+    "business_analyst",
+    "data_scientist",
+    "devops_engineer",
+    "full_stack_developer",
+    "hadoop_developer",
+    "healthcare",
+    "java_developer",
+    "program_manager",
+    "project_manager",
+    "scrum_master"
+  ],
+  "label_counts": {
+    "business_analyst": 15,
+    "data_scientist": 15,
+    "devops_engineer": 15,
+    "full_stack_developer": 15,
+    "hadoop_developer": 15,
+    "healthcare": 15,
+    "java_developer": 15,
+    "program_manager": 15,
+    "project_manager": 15,
+    "scrum_master": 15
+  },
+  "classification_report": {
+    "business_analyst": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "data_scientist": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "devops_engineer": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "full_stack_developer": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "hadoop_developer": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "healthcare": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "java_developer": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "program_manager": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "project_manager": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "scrum_master": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 30.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 30.0
+    }
+  }
+}
