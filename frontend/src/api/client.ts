@@ -17,6 +17,11 @@ function needsOpenAIKey(url?: string, method?: string, data?: unknown) {
 export const api = axios.create({ baseURL: BASE_URL, timeout: 60000, withCredentials: true });
 
 api.interceptors.request.use((config) => {
+  const accessToken = sessionStorage.getItem("rss_access_token");
+if (accessToken) {
+  config.headers = config.headers ?? {};
+  config.headers.Authorization = `Bearer ${accessToken}`;
+}
   const openAIKey = getOpenAIKey();
   if (openAIKey && needsOpenAIKey(config.url, config.method, config.data)) {
     config.headers = config.headers ?? {};

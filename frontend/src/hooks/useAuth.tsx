@@ -34,9 +34,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   function persist(token: Token) {
-    sessionStorage.setItem(USER_KEY, JSON.stringify(token.user));
-    setUser(token.user);
-  }
+  sessionStorage.setItem(USER_KEY, JSON.stringify(token.user));
+  sessionStorage.setItem("rss_access_token", token.access_token);
+  setUser(token.user);
+}
 
   async function login(email: string, password: string) {
     if (firebaseConfigured) {
@@ -82,11 +83,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   function logout() {
-    void api.post("/auth/logout").catch(() => undefined);
-    clearOpenAIKey();
-    sessionStorage.removeItem(USER_KEY);
-    setUser(null);
-  }
+  void api.post("/auth/logout").catch(() => undefined);
+  clearOpenAIKey();
+  sessionStorage.removeItem(USER_KEY);
+  sessionStorage.removeItem("rss_access_token");
+  setUser(null);
+}
 
   return (
     <AuthContext.Provider value={{ user, loading, login, loginWithGoogle, register, logout }}>

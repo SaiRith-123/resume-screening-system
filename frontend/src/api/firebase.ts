@@ -23,7 +23,8 @@ export async function signInWithGoogle(): Promise<string> {
     const result = await signInWithPopup(auth, new GoogleAuthProvider());
     return result.user.getIdToken();
   } catch (error) {
-    const code = (error as { code?: string }).code;
+  console.error("GOOGLE LOGIN ERROR:", error);
+  const code = (error as { code?: string }).code;
     if (code === "auth/popup-closed-by-user") throw new Error("Google sign-in was cancelled.");
     if (code === "auth/unauthorized-domain") throw new Error("This website domain is not authorized in Firebase.");
     if (code === "auth/popup-blocked") throw new Error("Your browser blocked the Google sign-in popup.");
