@@ -1,6 +1,12 @@
 import { initializeApp, getApps } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  sendEmailVerification,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -34,12 +40,33 @@ export async function signInWithGoogle(): Promise<string> {
 
 export async function signInWithEmail(email: string, password: string): Promise<string> {
   if (!auth) throw new Error("Firebase authentication is not configured for this environment.");
+
   const result = await signInWithEmailAndPassword(auth, email, password);
+
+  if (!result.user.emailVerified) {
+    await sendEmailVerification(result.user);
+    throw new Error("A verification email has been sent. Please verify your email, then sign in again.");
+  }
+
   return result.user.getIdToken();
 }
 
-export async function registerWithEmail(email: string, password: string): Promise<string> {
+export async function registerWithEmail(email: string, password: string): Promise<void> {
   if (!auth) throw new Error("Firebase authentication is not configured for this environment.");
+
   const result = await createUserWithEmailAndPassword(auth, email, password);
-  return result.user.getIdToken();
+
+  await sendEmailVerification(result.user);
+}
+
+export async function resendVerificationEmail(): Promise<void> {
+  if (!auth) {
+    throw new Error("Firebase authentication is not configured for this environment.");
+  }
+
+  if (!auth.currentUser) {
+    throw new Error("No Firebase user is currently signed in.");
+  }
+
+  await sendEmailVerification(auth.currentUser);
 }

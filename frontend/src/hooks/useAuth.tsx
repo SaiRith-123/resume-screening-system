@@ -64,12 +64,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   async function register(email: string, fullName: string, password: string, acceptTerms: boolean, acceptPrivacy: boolean) {
     if (firebaseConfigured) {
-      if (!acceptTerms || !acceptPrivacy) throw new Error("Terms and privacy consent are required.");
-      const idToken = await registerWithEmail(email, password);
-      const { data } = await api.post<Token>("/auth/firebase", {
-        id_token: idToken, accept_terms: acceptTerms, accept_privacy: acceptPrivacy,
-      });
-      persist(data);
+      if (!acceptTerms || !acceptPrivacy) 
+        throw new Error("Terms and privacy consent are required.");
+      await registerWithEmail(email, password);
       return;
     }
     const { data } = await api.post<Token>("/auth/register", {
