@@ -4,7 +4,7 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import Field, field_validator, model_validator
+from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 ROOT_ENV_FILE = Path(__file__).resolve().parents[3] / ".env"
@@ -30,7 +30,9 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
     # Database
-    DATABASE_URL: str = "postgresql+psycopg://rss:rss_password@localhost:5432/resume_screening"
+    DATABASE_URL: str = (
+        "postgresql+psycopg://rss:rss_password@localhost:5432/resume_screening"
+    )
 
     # Async
     REDIS_URL: str = ""
@@ -58,7 +60,7 @@ class Settings(BaseSettings):
     # Embeddings
     EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
     EMBEDDING_DIM: int = 384
-    EMBEDDING_BACKEND: str = "transformers"  # transformers | hash (explicit degraded mode)
+    EMBEDDING_BACKEND: str = "transformers"  # transformers | hash
     EMBEDDING_CACHE_DIR: str = ".cache/embeddings"
 
     # LLM
@@ -81,22 +83,52 @@ class Settings(BaseSettings):
     def _warn_secret(cls, v: str) -> str:
         return v
 
+    @field_validator(
+        "S3_ACCESS_KEY_ID",
+        "S3_SECRET_ACCESS_KEY",
+        "S3_REGION",
+        "S3_ENDPOINT_URL",
+        "S3_BUCKET",
+        mode="before",
+    )
+    @classmethod
+    def _strip_s3_values(cls, v):
+        if isinstance(v, str):
+            return v.strip()
+        return v
+
     @model_validator(mode="after")
     def validate_production_storage(self):
         if self.is_production:
             if self.DATABASE_URL.startswith("sqlite"):
-                raise ValueError("Production requires a remote PostgreSQL DATABASE_URL")
+                raise ValueError(
+                    "Production requires a remote PostgreSQL DATABASE_URL"
+                )
+
             if self.STORAGE_BACKEND.lower() != "s3" or not self.S3_BUCKET:
-                raise ValueError("Production requires configured S3-compatible remote storage")
+                raise ValueError(
+                    "Production requires configured S3-compatible remote storage"
+                )
+
             if self.SECRET_KEY.startswith("dev-insecure"):
-                raise ValueError("Production requires a non-default SECRET_KEY")
+                raise ValueError(
+                    "Production requires a non-default SECRET_KEY"
+                )
+
             if not self.FIREBASE_PROJECT_ID:
-                raise ValueError("Production requires FIREBASE_PROJECT_ID")
+                raise ValueError(
+                    "Production requires FIREBASE_PROJECT_ID"
+                )
+
         return self
 
     @property
     def cors_origins_list(self) -> list[str]:
-        return [o.strip() for o in self.CORS_ORIGINS.split(",") if o.strip()]
+        return [
+            origin.strip()
+            for origin in self.CORS_ORIGINS.split(",")
+            if origin.strip()
+        ]
 
     @property
     def is_production(self) -> bool:
